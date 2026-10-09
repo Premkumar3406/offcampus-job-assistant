@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OffCampus AI | Job Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    
+    <header class="topbar">
+        <div class="brand">OffCampus<span>AI</span></div>
+        <div class="subtitle">Your fresher job search workspace</div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">YOUR CAREER STARTS HERE</p>
+            <h1>Find your next opportunity.</h1>
+            <p>Discover recent jobs, open application links,
+               and track every opportunity in one place.</p>
+        </section>
+
+        <section class="search-panel">
+            <form id="searchForm">
+                <label for="role">Job role or skill</label>
+                <input id="role" name="role"
+                    value="software developer fresher"
+                    placeholder="Python developer, Java developer">
+
+                <label for="location">Preferred location</label>
+                <input id="location" name="location"
+                    value="India" placeholder="Bengaluru, Hyderabad, India">
+
+                <button type="submit" id="searchButton">
+                    Search recent jobs
+                </button>
+            </form>
+        </section>
+
+        <section class="portal-panel">
+            <h2>Search job portals</h2>
+            <p>Open the portals to view their own listings and
+               verify that each application is still open.</p>
+            <div class="portal-buttons">
+                <a id="linkedinLink" target="_blank"
+                   rel="noopener noreferrer">Search LinkedIn ↗</a>
+                <a id="naukriLink" target="_blank"
+                   rel="noopener noreferrer">Search Naukri ↗</a>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Recent matches</span>
+                <strong id="jobCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>Saved applications</span>
+                <strong id="savedCount">0</strong>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="section-heading">
+                <h2>Jobs posted in the last 24 hours</h2>
+                <span class="pill">24-hour filter</span>
+            </div>
+            <p id="message" class="message">
+                Search to discover recent openings.
+            </p>
+            <div id="jobResults" class="job-grid"></div>
+        </section>
+
+        <section class="results-section">
+            <div class="section-heading">
+                <h2>My application tracker</h2>
+            </div>
+            <div id="applicationResults" class="tracker-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        OffCampus AI · Discover responsibly. Apply with confidence.
+    </footer>
+
+   
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
